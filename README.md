@@ -1,119 +1,66 @@
-Food Delivery Time Analysis & Prediction
-This project analyzes a food delivery dataset to perform Exploratory Data Analysis (EDA) and build a machine learning model to predict delivery time. It explores factors affecting delivery performance such as delivery person ratings, traffic, weather, distance, and order characteristics.
+---
 
-Project Objectives
-Data Cleaning & Preprocessing
+## Data Sources
 
-Handle null values
+The dataset includes:
 
-Convert data types
+- **Order & Time Data:**
+  `Order_Date`, `Time_Orderd`, `Time_Order_picked`
+- **Delivery Partner Data:**
+  `Delivery_person_Ratings`, `Delivery_person_Age`, `Vehicle_condition`
+- **Order Details:**
+  `Type_of_order`, `Type_of_vehicle`, `multiple_deliveries`
+- **Environment Factors:**
+  `Weather_conditions`, `Road_traffic_density`, `Festival`
+- **Location Data:**
+  `Restaurant_latitude`, `Restaurant_longitude`,
+  `Delivery_location_latitude`, `Delivery_location_longitude`
+- **Target Variable:**
+  `Time_taken(min)` – the delivery time to predict.
 
-Extract useful features (date, time, distance)
+---
 
-Exploratory Data Analysis (EDA)
+## Key Steps & Features
 
-Understand trends and patterns through visualizations
+1. **Data Loading & Preprocessing**
+   - Handle missing values
+   - Convert columns to correct data types
+   - Extract useful features (e.g., day of week, order hour, distance)
 
-Key insights:
+2. **Exploratory Data Analysis (EDA)**
+   - **Visualizations**:
+     - Order type popularity
+     - Delivery ratings vs delivery time
+     - Multiple deliveries impact
+     - Day-of-week trends
+     - Orders by time of day
+     - Vehicle condition impact
+     - Festival vs Non-festival comparisons
+     - Distance vs Delivery time
+     - Correlation heatmap
 
-Impact of delivery ratings on time
+3. **Feature Engineering**
+   - Calculate distance using geolocation
+   - Encode categorical features
 
-Traffic, weather, and festival impact
+4. **Modeling**
+   - Train/test split
+   - Random Forest Regressor (and other models)
+   - Evaluate using MAE, RMSE, R²
 
-Order trends by day and hour
+---
 
-Correlations between numeric features
+## Getting Started
 
-Predictive Modeling
+### Prerequisites
 
-Machine learning models used:
+- Python 3.x
+- Jupyter Notebook
+- Libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `geopy`
 
-Random Forest Regressor
+### Setup
 
-XGBoost (optional)
-
-Evaluation metrics:
-
-R² Score
-
-Mean Absolute Error (MAE)
-
-Mean Squared Error (MSE)
-
-Key Visualizations
-Order Type Popularity (Pie Chart)
-
-Ratings vs Delivery Time (Scatter)
-
-Multiple Deliveries vs Time (Boxplot)
-
-Day of Week vs Avg Time (Bar/Line)
-
-Orders by Time of Day (Histogram)
-
-Vehicle Condition Impact (Boxplot)
-
-Festival vs Non-Festival (Bar Chart)
-
-Distance vs Time (Scatter + Regression)
-
-Correlation Heatmap
-
-Dataset
-The dataset contains the following key columns:
-
-Order_Date, Time_Orderd, Time_Order_picked
-
-Delivery_person_Ratings, Delivery_person_Age, Vehicle_condition
-
-Type_of_order, Type_of_vehicle, multiple_deliveries
-
-Weather_conditions, Road_traffic_density, Festival
-
-Restaurant_latitude/longitude, Delivery_location_latitude/longitude
-
-Target: Time_taken(min)
-
-Tech Stack
-Python Libraries:
-pandas, numpy, matplotlib, seaborn,
-scikit-learn, geopy (for distance calculation)
-How to Run
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/Sahil-Verma-131102/Food_Delivery_Time.git
-cd Food_Delivery_Time
-Install dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Open the Jupyter Notebook:
-
-bash
-Copy
-Edit
-jupyter notebook Food_Delivery_Time.ipynb
-Follow the steps inside the notebook to run EDA and modeling.
-
-Results
-Key insights about delivery time factors are derived.
-
-A Random Forest model was trained to predict Time_taken(min) with good accuracy.
-
-Business recommendations are provided based on findings.
-
-Future Work
-Hyperparameter tuning for better prediction.
-
-Include real-time weather/traffic data.
-
-Build a dashboard for live delivery time predictions.
-
-Author
-Sahil Verma
-
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Sahil-Verma_131102/Food_Delivery_Time.git
+   cd Food_Delivery_Time
